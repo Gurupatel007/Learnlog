@@ -1,0 +1,136 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Section styling */
+.section {
+  padding: 4rem 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Profile image styling */
+.profileImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profileImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.socialLinks a:hover {
+  transform: scale(1.1);
+  background-color: var(--ifm-color-primary-darker);
+}
+
+.resumeButton {
+  margin-top: 1.5rem;
+}
+
+/* Skills section */
+.skillsList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skillsList li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.skillsList li:last-child {
+  border-bottom: none;
+}
+
+/* Project cards */
+.projectCard {
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+}
+
+.projectCard img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Contact section */
+.contactInfo {
+  margin-bottom: 1.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.contactItem i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.contactMessage {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 996px) {
+  .section {
+    padding: 2rem 0;
+  }
+}

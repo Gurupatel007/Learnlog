@@ -1,0 +1,304 @@
+/* Import Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans bg-white text-gray-800;
+  }
+  
+  html[data-theme='dark'] body {
+    @apply bg-gray-900 text-gray-200;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 text-center text-gray-800;
+  }
+  
+  html[data-theme='dark'] .section-title {
+    @apply text-white;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-600 mb-16 text-center max-w-3xl mx-auto;
+  }
+  
+  html[data-theme='dark'] .section-subtitle {
+    @apply text-gray-400;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-200;
+  }
+  
+  html[data-theme='dark'] .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500;
+  }
+  
+  html[data-theme='dark'] .btn-primary {
+    @apply bg-primary-700 hover:bg-primary-600;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500;
+  }
+  
+  html[data-theme='dark'] .btn-secondary {
+    @apply bg-gray-700 text-gray-200 hover:bg-gray-600;
+  }
+  
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-blue-500 animate-gradient bg-300%;
+  }
+  
+  .skill-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-800;
+  }
+  
+  html[data-theme='dark'] .skill-badge {
+    @apply bg-primary-900 text-primary-200;
+  }
+}
+
+@layer utilities {
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+  
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+/* PDF printing styles */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  .text-gray-700, .text-gray-800, .text-gray-600 {
+    color: #1f2937 !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #111827 !important;
+  }
+  
+  .skill-badge {
+    background-color: #f3f4f6 !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
+  }
+  
+  .text-primary-600 {
+    color: #0891b2 !important;
+  }
+}
+
+
+/* Docusaurus variables */
+:root {
+  --ifm-color-primary: #0891b2;
+  --ifm-color-primary-dark: #0782a0;
+  --ifm-color-primary-darker: #077a97;
+  --ifm-color-primary-darkest: #06647c;
+  --ifm-color-primary-light: #09a0c4;
+  --ifm-color-primary-lighter: #09a8cd;
+  --ifm-color-primary-lightest: #0abee8;
+  
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-link-color: #1e293b;
+  --ifm-navbar-link-hover-color: #0891b2;
+  
+  --ifm-footer-background-color: #f3f4f6;
+  --ifm-footer-color: #4b5563;
+  --ifm-footer-link-color: #6b7280;
+  --ifm-footer-link-hover-color: #0891b2;
+  --ifm-footer-title-color: #374151;
+}
+
+html[data-theme='dark'] {
+  --ifm-color-primary: #22d3ee;
+  --ifm-color-primary-dark: #14c5e0;
+  --ifm-color-primary-darker: #13bad4;
+  --ifm-color-primary-darkest: #0f99ae;
+  --ifm-color-primary-light: #3ad8f0;
+  --ifm-color-primary-lighter: #47dbf1;
+  --ifm-color-primary-lightest: #70e3f4;
+  
+  --ifm-navbar-background-color: rgba(17, 24, 39, 0.8);
+  --ifm-navbar-link-color: #f1f5f9;
+  --ifm-navbar-link-hover-color: #22d3ee;
+  
+  --ifm-background-color: #111827;
+  --ifm-background-surface-color: #1f2937;
+  
+  --ifm-footer-background-color: #1f2937;
+  --ifm-footer-color: #e5e7eb;
+  --ifm-footer-link-color: #d1d5db;
+  --ifm-footer-link-hover-color: #22d3ee;
+  --ifm-footer-title-color: #f3f4f6;
+}
+
+/* Navbar customization */
+.navbar {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Footer customization */
+.footer {
+  --ifm-footer-padding-vertical: 2rem;
+}
+
+.footer__title {
+  font-weight: 600;
+}
+
+.footer__link-item {
+  font-weight: 400;
+}
+
+.footer__copyright {
+  font-size: 0.875rem;
+  color: var(--ifm-footer-color);
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: 0.5rem !important;
+}
+
+/* Fix for dark mode sections */
+html[data-theme='dark'] .bg-gray-50 {
+  background-color: #111827;
+}
+
+html[data-theme='dark'] .bg-white {
+  background-color: #1f2937;
+}
+
+html[data-theme='dark'] .text-gray-800 {
+  color: #f3f4f6;
+}
+
+html[data-theme='dark'] .text-gray-600 {
+  color: #d1d5db;
+}
+
+html[data-theme='dark'] .border-gray-200 {
+  border-color: #374151;
+}
+
+/* Form inputs in dark mode */
+html[data-theme='dark'] input,
+html[data-theme='dark'] textarea {
+  background-color: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+html[data-theme='dark'] input:focus,
+html[data-theme='dark'] textarea:focus {
+  border-color: var(--ifm-color-primary);
+}
+
+/* Fix for contact section background in dark mode */
+html[data-theme='dark'] #contact {
+  background-color: #111827;
+}
+
+/* Fix for experience section background in dark mode */
+html[data-theme='dark'] #experience {
+  background-color: #111827;
+}
+
+/* Fix for about section background in dark mode */
+html[data-theme='dark'] #about {
+  background-color: #111827;
+}
+
+/* Fix vertical alignment in breadcrumbs navigation */
+.breadcrumbs__item {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  line-height: normal !important;
+}
+
+/* Specifically target the home icon */
+.breadcrumbs__item:first-child svg,
+.breadcrumbs__item svg[class*="iconHome"] {
+  position: relative !important;
+  top: -1px !important; /* Fine-tune as needed */
+  vertical-align: middle !important;
+}
+
+/* Target the text content */
+.breadcrumbs__item span {
+  vertical-align: middle !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Fix the separator alignment */
+.breadcrumbs__item:not(:last-child)::after {
+  display: inline-flex !important;
+  align-items: center !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: -1px !important; /* Fine-tune as needed */
+}
+
+/* Ensure all links in breadcrumbs are aligned */
+.breadcrumbs__link {
+  display: inline-flex !important;
+  align-items: center !important;
+}
